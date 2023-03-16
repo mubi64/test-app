@@ -17,17 +17,60 @@ function Login() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Username:
-        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-      </label>
-      <label>
-        Password:
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      </label>
-      <button type="submit">Login</button>
-    </form>
+    <div className="container">
+      <form className="login-form" onSubmit={handleSubmit}>
+        <label>
+          Username:
+          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+        </label>
+        <label>
+          Password:
+          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        </label>
+        <button type="submit">Login</button>
+      </form>
+      <style jsx>{`
+        .container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+        .login-form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: #f5f5f5;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+        label {
+          display: block;
+          margin-bottom: 10px;
+        }
+        input {
+          margin-left: 10px;
+          padding: 5px;
+          border: none;
+          border-radius: 3px;
+          box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+        }
+        button {
+          margin-top: 10px;
+          padding: 5px 10px;
+          border: none;
+          border-radius: 3px;
+          background-color: #0070f3;
+          color: white;
+          font-size: 16px;
+          cursor: pointer;
+        }
+        button:hover {
+          background-color: #0062cc;
+        }
+      `}</style>
+    </div>
   );
 }
 
